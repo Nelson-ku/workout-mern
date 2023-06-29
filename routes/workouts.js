@@ -1,4 +1,10 @@
+
+//imports
+const workout=require('../models/workoutsModels')
 const express =require ('express')
+const {
+    createWorkout,
+}=require('../controllers/workoutControllers')
 
 //creates an instance of a handler
 const router = express.Router()
@@ -14,9 +20,7 @@ router.get('/:id',(req, res)=>{
 })
 
 // posting a workout
-router.post('/',(req, res)=>{
-    res.json({mssg:'post a new workout'})
-})
+router.post('/', createWorkout)
 
 //delete a workout
 router.delete('/:id',(req, res)=>{
