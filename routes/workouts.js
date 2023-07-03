@@ -4,33 +4,30 @@ const workout=require('../models/workoutsModels')
 const express =require ('express')
 const {
     createWorkout,
+    getWorkout,
+    getWorkouts,
+    deleteWorkout,
+    updateWorkout
 }=require('../controllers/workoutControllers')
 
 //creates an instance of a handler
 const router = express.Router()
 
 //used in getting all workouts
-router.get('/',(req, res)=>{
-    res.json({mssg:'get all workouts'})
-})
+router.get('/allWorkouts', getWorkouts)
 
 //Get a single workout
-router.get('/:id',(req, res)=>{
-    res.json({mssg:'Get a single workout'})
-})
+router.get('/singleworkout:id',getWorkout)
+
 
 // posting a workout
-router.post('/', createWorkout)
+router.post('/createworkouts', createWorkout)
 
 //delete a workout
-router.delete('/:id',(req, res)=>{
-    res.json({mssg:'deleting a  workout'})
-})
+router.delete('/deleteworkout:id',deleteWorkout)
 
 //updating a workout
-router.patch('/:id',(req, res)=>{
-    res.json({mssg:'updating a workout '})
-})
+router.patch('/updateworkout:id', updateWorkout)
 
 
 //exporting the routes
