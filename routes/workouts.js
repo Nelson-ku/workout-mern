@@ -17,17 +17,17 @@ const router = express.Router()
 router.get('/allWorkouts', getWorkouts)
 
 //Get a single workout
-router.get('/singleworkout:id',getWorkout)
+router.get('/singleworkout/:id',getWorkout)
 
 
 // posting a workout
 router.post('/createworkouts', createWorkout)
 
 //delete a workout
-router.delete('/deleteworkout:id',deleteWorkout)
+router.delete('/deleteworkout/:id',deleteWorkout)
 
 //updating a workout
-router.patch('/updateworkout:id', updateWorkout)
+router.patch('/updateworkout/:id', updateWorkout)
 
 
 //exporting the routes
